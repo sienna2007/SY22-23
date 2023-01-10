@@ -7,8 +7,36 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock x:Name="Textbox1" HorizontalAlignment="Left" Margin="47,75,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="32" Width="119"/>
-        <Button Content="Button" Margin="30,112,694,275" Click="Button_Click" RenderTransformOrigin="-0.048,0.641"/>
+        <Menu>
+            <MenuItem Header="_File">
+                <MenuItem Header="_New"></MenuItem>
+                <MenuItem Header="_Open" Click="Open_Click"></MenuItem>
+                <MenuItem Header="_Save" Click="Save_Click"></MenuItem>
+                <MenuItem Header="_Exit" Click="Exit_Click"></MenuItem>
 
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Command="ApplicationCommands.Copy"/>
+                <MenuItem Command="ApplicationCommands.Cut"/>
+                <MenuItem Command="ApplicationCommands.Paste"/>
+            </MenuItem>
+            <MenuItem Header="_Font">
+                <MenuItem Header="_Bold" IsCheckable="True"
+              Checked="Bold_Checked"
+              Unchecked="Bold_Unchecked"/>
+                <MenuItem Header="_Italic" IsCheckable="True"
+              Checked="Italic_Checked"
+              Unchecked="Italic_Unchecked"/>
+                <Separator/>
+                <MenuItem Header="I_ncrease Font Size"
+              Click="IncreaseFont_Click"/>
+                <MenuItem Header="_Decrease Font Size"
+              Click="DecreaseFont_Click"/>
+            </MenuItem>
+        </Menu>
+        <TextBox Name="textBox1" TextWrapping="Wrap"
+         Margin="4,22,0,-18">
+            The quick brown fox jumps over the lazy dog.
+        </TextBox>
     </Grid>
 </Window>
